@@ -111,3 +111,7 @@ st.pyplot(fig)
 results_df = pd.DataFrame({
     "time": time,
     "thickness_dry": thickness_dry,
+    "quality_wet": quality_wet
+})
+st.download_button("Download results CSV", results_df.to_csv(index=False).encode('utf-8'), "oxidation_results.csv", "text/csv")
+
